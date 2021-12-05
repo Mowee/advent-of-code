@@ -45,7 +45,7 @@ class Day2 {
     }
 
     fun parseCommands(commands: String) {
-        commands.trimIndent().lines().forEach {
+        commands.toLines().forEach {
             val split = it.split(" ")
             val command = split.first()
             val units = split.last().toInt()

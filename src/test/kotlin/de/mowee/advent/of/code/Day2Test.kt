@@ -9,12 +9,7 @@ class Day2Test {
     fun `implement commands as text`() {
         // given
         val submarine = Day2()
-        val commands = """forward 5
-down 5
-forward 8
-up 3
-down 8
-forward 2"""
+        val commands = getResourceAsText("day2TestData.txt")
 
         // when
         submarine.parseCommands(commands)

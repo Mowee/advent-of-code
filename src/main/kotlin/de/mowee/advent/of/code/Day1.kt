@@ -5,7 +5,7 @@ fun main() {
 
     // Day 1
     val day1 = Day1()
-    val dataNumbered = day1.textToNumberedList(dataText)
+    val dataNumbered = dataText.textToNumberedList()
     val countIncreasedMeasurements = day1.countIncreasedMeasurements(dataNumbered)
     val measurementWindows = day1.measurementWindows(dataNumbered)
     val sumOfMeasurementWindows = day1.sumOfMeasurementWindows(measurementWindows)
@@ -16,10 +16,6 @@ fun main() {
 }
 
 class Day1 {
-    fun textToNumberedList(input: String): List<Int> {
-        return input.trimIndent().lines().mapNotNull { it.toIntOrNull() }
-    }
-
     fun countIncreasedMeasurements(input: List<Int>): Int {
         return (0 until input.count()).count { it != 0 && input[it] > input[it - 1] }
     }

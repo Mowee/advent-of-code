@@ -10,18 +10,7 @@ class Day3Test {
     @Test
     fun `determine gamma rate`() {
         // given
-        val data = """00100
-11110
-10110
-10111
-10101
-01111
-00111
-11100
-10000
-11001
-00010
-01010"""
+        val data = getResourceAsText("day3TestData.txt")
 
         // when
         val gammaRate = day3.getGammaRate(data)
@@ -33,18 +22,7 @@ class Day3Test {
     @Test
     fun `determine epsilon rate`() {
         // given
-        val data = """00100
-11110
-10110
-10111
-10101
-01111
-00111
-11100
-10000
-11001
-00010
-01010"""
+        val data = getResourceAsText("day3TestData.txt")
 
         // when
         val gammaRate = day3.getEpsilonRate(data)
@@ -56,18 +34,7 @@ class Day3Test {
     @Test
     fun `determine OxygenGeneratorRating`() {
         // given
-        val data = """00100
-11110
-10110
-10111
-10101
-01111
-00111
-11100
-10000
-11001
-00010
-01010"""
+        val data = getResourceAsText("day3TestData.txt")
 
         // when
         val oxygenGeneratorRating = day3.getOxygenGeneratorRating(data)
@@ -79,18 +46,7 @@ class Day3Test {
     @Test
     fun `determine co2 scrubber rating`() {
         // given
-        val data = """00100
-11110
-10110
-10111
-10101
-01111
-00111
-11100
-10000
-11001
-00010
-01010"""
+        val data = getResourceAsText("day3TestData.txt")
 
         // when
         val scrubberRating = day3.getCO2ScrubberRating(data)

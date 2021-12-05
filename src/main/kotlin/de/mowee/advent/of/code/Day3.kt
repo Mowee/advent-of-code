@@ -24,31 +24,23 @@ fun main() {
 class Day3 {
 
     fun getCO2ScrubberRating(data: String): String {
-        return filterByCommonValue(data) {
-            it.getLeastCommon()
-        }
+        return filterByCommonValue(data) { it.getLeastCommon() }
     }
 
     fun getOxygenGeneratorRating(data: String): String {
-        return filterByCommonValue(data) {
-            it.getMostCommon()
-        }
+        return filterByCommonValue(data) { it.getMostCommon() }
     }
 
     fun getGammaRate(data: String): String {
-        return mapCommonValueByColumn(data) {
-            it.getMostCommon()
-        }
+        return mapCommonValueByColumn(data) { it.getMostCommon() }
     }
 
     fun getEpsilonRate(data: String): String {
-        return mapCommonValueByColumn(data) {
-            it.getLeastCommon()
-        }
+        return mapCommonValueByColumn(data) { it.getLeastCommon() }
     }
 
     private fun mapCommonValueByColumn(data: String, getCommonValue: (map: List<Char>) -> Char): String {
-        val lines = data.trimIndent().lines()
+        val lines = data.toLines()
         val matrix = lines.convertDataToMatrix()
         return (0 until lines.getRowLength()).joinToString("") { index ->
             getCommonValue(matrix.map { it[index] }).toString()
@@ -56,7 +48,7 @@ class Day3 {
     }
 
     private fun filterByCommonValue(data: String, getCommonValue: (map: List<Char>) -> Char): String {
-        val lines = data.trimIndent().lines()
+        val lines = data.toLines()
         val matrix = lines.convertDataToMatrix()
         var result = matrix
 
